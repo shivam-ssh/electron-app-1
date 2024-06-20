@@ -17,6 +17,15 @@
     "build:mac": "npm run build && electron-builder --mac",
     "build:linux": "npm run build && electron-builder --linux"
   },
+  "build": {
+    "publish": [
+      {
+        "provider" : "github",
+        "owner" : "shivam-ssh",
+        "repo" : "electron-app-1"
+      }
+    ]
+  },
   "dependencies": {
     "@electron-toolkit/preload": "^3.0.0",
     "@electron-toolkit/utils": "^3.0.0",
