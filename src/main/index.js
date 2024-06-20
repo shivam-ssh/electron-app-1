@@ -25,25 +25,25 @@ function createWindow() {
 
   // Handle auto-update events
   autoUpdater.on('checking-for-update', () => {
-    log.info('Checking for update...')
+    console.log('Checking for update...')
   })
   autoUpdater.on('update-available', (info) => {
-    log.info('Update available.')
+    console.log('Update available.')
   })
   autoUpdater.on('update-not-available', (info) => {
-    log.info('Update not available.')
+    console.log('Update not available.')
   })
   autoUpdater.on('error', (err) => {
-    log.error('Error in auto-updater. ' + err)
+    console.log('Error in auto-updater. ' + err)
   })
   autoUpdater.on('download-progress', (progressObj) => {
     let log_message = 'Download speed: ' + progressObj.bytesPerSecond
     log_message = log_message + ' - Downloaded ' + progressObj.percent + '%'
     log_message = log_message + ' (' + progressObj.transferred + '/' + progressObj.total + ')'
-    log.info(log_message)
+    console.log(log_message)
   })
   autoUpdater.on('update-downloaded', (info) => {
-    log.info('Update downloaded; will install now')
+    console.log('Update downloaded; will install now')
     autoUpdater.quitAndInstall()
   })
 
